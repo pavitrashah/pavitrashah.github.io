@@ -83,6 +83,45 @@
 
   <script src="lazysizes.min.js" async=""></script>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+
+        if(value == "all")
+        {
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+
+        }
+    });
+
+    if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+</script>
+
 </head>
 
 <body id="page-top">
@@ -362,68 +401,103 @@ I was assigned task by the Head of the department to<br>
       <div class="w-100">
         <h2 class="mb-5">Projects</h2>
         <div class="container">
+          <div class="row">
+            <div class="gallery col-md-12 d-flex justify-content-center mb-5">
 
-  <div class="row text-center text-lg-left">
+        <button type="button" class="btn btn-outline-black waves-effect filter-button" data-filter="all">All</button>
+        <button type="button" class="btn btn-outline-black waves-effect filter-button" data-filter="1">Machine Learning</button>
+        <button type="button" class="btn btn-outline-black waves-effect filter-button" data-filter="2">Web Development</button>
 
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid " src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
-            <h3 class="text-center my-3">Photo title</h3>
-          </a>
-    </div>
+      </div>
 
-  </div>
-</div>
+            <!-- Team Member 1 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 1">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 2">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 1">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+            <!-- Team Member 1 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 1">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 2">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="gallery_product col-xl-4 col-md-6 mb-4 filter all 1">
+              <a href="#">
+              <div class="card border-0 shadow">
+                <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Team Member</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+              </a>
+            </div>
+
+
+
+
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
       </div>
     </section>
+
+
+
 
 
     <hr class="m-0">
@@ -466,15 +540,7 @@ I was assigned task by the Head of the department to<br>
 
   </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
 
 </body>
 
